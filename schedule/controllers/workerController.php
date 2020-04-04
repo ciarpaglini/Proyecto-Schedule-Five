@@ -13,6 +13,7 @@ require_once 'models/worker.php';
 			$name = isset($_POST['name']) ? $_POST['name'] : false;
 			$surname = isset($_POST['surname']) ? $_POST['surname'] : false;
 			$email = isset($_POST['email']) ? $_POST['email'] : false;
+			$phone = isset($_POST['phone']) ? $_POST['phone'] : false;
             //$imagen = isset($_POST['imagen']) ? $_POST['imagen'] : false;
 			
 			if($name && $surname && $email){
@@ -20,7 +21,8 @@ require_once 'models/worker.php';
 				$worker = new Worker();
 				$worker->setName($name);
 				$worker->setSurname($surname);
-                $worker->setEmail($email);
+				$worker->setEmail($email);
+				$worker->setphone($phone);
 				$worker->setUser_id($identity->id);
 
 				// Guardar la imagen

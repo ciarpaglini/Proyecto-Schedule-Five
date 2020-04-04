@@ -7,6 +7,7 @@ class Worker
     private $name;
     private $surname;
     private $email;
+    private $phone;
     private $image;
     private $created_at;
     private $updated_at;
@@ -40,6 +41,11 @@ class Worker
     function getEmail()
     {
         return $this->email;
+    }
+
+    function getPhone()
+    {
+        return $this->phone;
     }
 
     function getImage()
@@ -82,6 +88,11 @@ class Worker
         $this->email = $this->db->real_escape_string($email);
     }
 
+    function setPhone($phone)
+    {
+        $this->phone = $phone;
+    }
+
     function setImage($image)
     {
         $this->image = $image;
@@ -99,7 +110,7 @@ class Worker
 
     public function save()
     {
-        $sql = "INSERT INTO workers VALUES(NULL, {$this->getUser_id()}, '{$this->getName()}', '{$this->getSurname()}', '{$this->getEmail()}', '{$this->getImage()}', CURDATE(), CURDATE());";
+        $sql = "INSERT INTO workers VALUES(NULL, {$this->getUser_id()}, '{$this->getName()}', '{$this->getSurname()}', '{$this->getEmail()}', '{$this->getPhone()}', '{$this->getImage()}', CURDATE(), CURDATE());";
         $save = $this->db->query($sql);
       
 
@@ -151,8 +162,6 @@ class Worker
 		
         $save = $this->db->query($sql);
 
-        var_dump($save);
-        die();
 		
 		$result = false;
 		if($save){

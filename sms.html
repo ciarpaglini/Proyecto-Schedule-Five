@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+</head>
+
+<body style="text-align:center;" id="body">
+    <h1 style="color:green;">
+        GeeksForGeeks
+    </h1>
+
+    <p>
+        <!-- Making a text input -->
+        <input type="text" id="channel" placeholder="Channel">
+        <input type="text" id="to" placeholder="numero">
+        <input type="text" id="content" placeholder="mensaje">
+
+        <!-- Button to send data -->
+        <button onclick="sendJSON()">Send JSON</button>
+
+        <!-- For printing result from server -->
+        <p class="result" style="color:green"></p>
+
+    </p>
+
+    <!-- Include the JavaScript file -->
+
+    <!--<div>
+        <button class="btn btn-danger" id="boton">Presiona</button>
+    </div>-->
+    <div>
+        <button onclick="processData()">Post-process</button>
+    </div>
+    
+    
+
+    <script>
+        function sendJSON() {
+            console.log('esta etrando');
+
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "https://platform.clickatell.com/messages/http/send?apiKey=quRNCixGQbG-Q7Vmjx20Wg==&to=34611272478&content=probandooooooooooo", true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    console.log('success');
+                }
+            };
+            xhr.send();
+            
+
+            
+
+
+
+
+            /*let result = document.querySelector('.result');
+            let channel = document.querySelector('#channel');
+            let to = document.querySelector('#to');
+            let content = document.querySelector('#content');
+
+            // Creating a XHR object 
+            let xhr = new XMLHttpRequest();
+            let url = "https://platform.clickatell.com/v1/message";
+
+            // open a connection 
+            xhr.open("POST", url, true);
+
+            // Set the request header i.e. which type of content you are sending 
+            xhr.setRequestHeader("Content-Type", "application/json");
+            xhr.setRequestHeader('Authorization', '_arCcVrzR3GvOX0qY3E-Gw==');
+
+            // Create a state change callback 
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+
+                    console.log('success');
+
+                    // Print received data from server 
+                    result.innerHTML = this.responseText;
+
+                }
+            };
+
+            // Converting JSON data to string 
+            var data = JSON.stringify(
+                {
+                    "message": [
+                        {
+                            "channel": channel.value,
+                            "to": to.value,
+                            "content": content.value
+                        }
+                    ]
+                }
+            );
+
+            // Sending data with the request 
+            xhr.send(data);*/
+        }
+        function processData()
+        {
+            console.log('estra entrando')
+
+            var xhr = new XMLHttpRequest();
+xhr.open("GET", "https://api.smsglobal.com/http-api.php?action=sendsms&user=6vgfjlj8&password=U9zxhD7T&from=34611111111&to=34611272478&text=Hello%20world", true);
+xhr.onreadystatechange = function(){
+    if (xhr.readyState == 4 && xhr.status == 200) {
+        console.log('success');
+    }
+};
+xhr.send();
+        }
+
+
+
+    </script>
+
+
+
+
+
+
+</body>
+
+
+</html>

@@ -1,6 +1,6 @@
 <?php
 
-define("base_url", "http://localhost:8888/proyecto-sunday/schedule/");
-define("base_url_dos", "http://localhost:8888/proyecto-sunday/");
+define("base_url", "localhost:8888/schedule/");
+define("base_url_dos", "localhost:8888/");
 define("controller_default", "userController");
 define("action_default", "login_view");

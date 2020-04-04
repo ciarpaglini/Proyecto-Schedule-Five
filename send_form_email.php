@@ -5,9 +5,9 @@ if(isset($_POST['email'])) {
  
     // 
  
-    $email_to = "ciarpaglini@hotmail.com";
+    $email_to = "ciarpaglini24@gmail.com";
 	
-    $email_subject = "Contacto desde arcekarina.com";
+    $email_subject = "Contacto desde schedulefive.site";
  
     function died($error) {
  
@@ -25,7 +25,7 @@ if(isset($_POST['email'])) {
  
     // Se valida que los campos del formulairo estén llenos
  
-    if(!isset($_POST['nane']) ||
+    if(!isset($_POST['name']) ||
 	   
      !isset($_POST['email']) ||
      
@@ -96,11 +96,11 @@ $asunto = $_POST['phone']; // requerido
  
   
  
-    $email_message .= "Email: ".clean_string($last_name)."\n";
+    $email_message .= "Email: ".clean_string($email_from)."\n";
  
-    $email_message .= "Subject ".clean_string($email_from)."\n";
+    $email_message .= "Nombre ".clean_string($nombre_from)."\n";
  
-    $email_message .= "Asunto: ".clean_string($asunto)."\n";
+    $email_message .= "Phone: ".($asunto)."\n";
  
     $email_message .= "Mensaje: ".clean_string($message)."\n";
  
@@ -122,7 +122,7 @@ $headers = 'From: '.$email_from."\r\n".
 <!-- Mensaje de que fue enviado-->
 
 <?php
-	header('Location: http://localhost:8888/proyecto-sunday/index.php');
+	header('Location: https://www.schedulefive.site/index.php');
 ?>
  
 
